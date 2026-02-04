@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Maroto — Portfolio | Desarrollador Multiplataforma</title>
-        <meta name="description" content="Gonzalo 'Maroto' — Desarrollador Multiplataforma (Kotlin, Java, Python). Portfolio con proyectos Android, APIs y dashboards." />
+        <title>Gonzalo Bravo Maroto — Portfolio</title>
+        <meta name="description" content="Gonzalo Bravo Maroto — Desarrollador de Aplicaciones Multiplataforma. Portfolio online." />
 
         <!-- Google Fonts (Montserat + Inter) -->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
             --accent:#ff7a18;
             --glass: rgba(255,255,255,0.04);
             --glass-2: rgba(255,255,255,0.02);
-            --maxwidth:1100px;
+            --maxwidth:1200px;
             }
 
             *{box-sizing:border-box}
@@ -25,7 +25,7 @@
             body{
             margin:0;
             font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            background: linear-gradient(180deg, var(--bg) 0%, #071028 100%);
+            background: var(--bg);
             color:#e6eef8;
             -webkit-font-smoothing:antialiased;
             -moz-osx-font-smoothing:grayscale;
@@ -38,11 +38,6 @@
             .container{
             width:100%;
             max-width:var(--maxwidth);
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            border-radius:14px;
-            padding:28px;
-            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-            border: 1px solid rgba(255,255,255,0.03);
             }
 
             header{
@@ -50,7 +45,9 @@
             gap:20px;
             align-items:center;
             justify-content:space-between;
-            margin-bottom:18px;
+            margin-bottom:40px;
+            padding:0 20px;
+            flex-wrap:wrap;
             }
 
             .brand{
@@ -69,7 +66,7 @@
             .brand h1{margin:0;font-size:18px}
             .brand p{margin:0;color:var(--muted);font-size:13px}
 
-            nav{display:flex;gap:12px;align-items:center}
+            nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
             .btn{
             background:transparent;border:1px solid rgba(255,255,255,0.06);
             color:var(--muted);padding:8px 12px;border-radius:10px;font-size:13px;
@@ -82,200 +79,225 @@
             font-weight:600;
             }
 
-            main{display:grid;grid-template-columns: 1fr 360px; gap:26px;align-items:start;}
-            @media (max-width:980px){ main{grid-template-columns:1fr} .right-col{order:2} }
+            main{display:flex;flex-direction:column;gap:40px;}
 
             /* HERO / INTRO */
             .hero{
-            padding:22px;border-radius:12px;background:linear-gradient(180deg,var(--glass),transparent);
+            padding:32px;border-radius:14px;background:linear-gradient(180deg,var(--glass),transparent);
             border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
             }
-            .hero .title{font-family:"Montserrat";font-size:22px;margin:0 0 6px 0}
-            .hero .lead{color:var(--muted);margin:0 0 14px 0}
-            .chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-            .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--glass-2);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+            .hero .title{font-family:"Montserrat";font-size:26px;margin:0 0 10px 0}
+            .hero .lead{color:var(--muted);margin:0 0 20px 0;font-size:16px;line-height:1.6}
 
-            .actions{display:flex;gap:10px;margin-top:14px}
+            .actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
             .actions a{font-size:14px;text-decoration:none}
 
-            /* Projects */
-            .projects{margin-top:18px}
-            .grid-projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-            @media (max-width:720px){ .grid-projects{grid-template-columns:1fr} }
+            /* About + Tech section */
+            .info-grid{
+            display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+            }
+            @media (max-width:1024px){ .info-grid{grid-template-columns:repeat(2,1fr)} }
+            @media (max-width:640px){ .info-grid{grid-template-columns:1fr} }
 
-            .card{
-            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
+            .info-card{
+            padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             }
-            .card h3{margin:0 0 6px 0;font-size:15px}
-            .meta{font-size:12px;color:var(--muted);margin-bottom:8px}
-            .techs{display:flex;gap:6px;flex-wrap:wrap}
-            .t{font-size:11px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+            .info-card h3{margin:0 0 12px 0;font-size:16px;font-family:"Montserrat"}
+            .info-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
 
-            .preview{
-            height:90px;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            display:flex;align-items:center;justify-content:center;margin-top:10px;color:var(--muted);font-size:13px;
-            }
-
-            /* Right column */
-            .right-col{
-            position:sticky;top:30px;
-            display:flex;flex-direction:column;gap:12px;
-            }
-            .about, .tech-list, .contact{
-            background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
-            }
-            .about h4, .tech-list h4, .contact h4{margin:0 0 8px 0;font-size:14px}
-            .about p{margin:0;color:var(--muted);font-size:14px}
             .tech-grid{display:flex;flex-wrap:wrap;gap:8px}
-            .tech-item{background:var(--glass);padding:8px 10px;border-radius:8px;font-size:13px;color:var(--muted)}
+            .tech-item{background:var(--glass);padding:8px 12px;border-radius:8px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
 
-            .contact a{display:inline-block;margin-top:8px;text-decoration:none;color:var(--muted);font-weight:600}
-            .socials{display:flex;gap:8px;margin-top:10px}
-            .socials a{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);text-decoration:none;font-size:13px}
+            .contact-items{display:flex;flex-direction:column;gap:10px}
+            .contact-item{display:flex;align-items:center;gap:8px}
+            .contact-item a{color:var(--accent);text-decoration:none;font-weight:600;font-size:14px}
+            .socials{display:flex;gap:10px;margin-top:12px}
+            .socials a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);text-decoration:none;font-size:13px}
 
-            footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px;padding-top:8px;border-top:1px dashed rgba(255,255,255,0.02)}
+            /* Projects section */
+            .projects-section h2{font-size:20px;margin:0 0 20px 0;font-family:"Montserrat"}
+
+            /* Projects grid */
+            .grid-projects{display:grid;grid-template-columns:repeat(auto-fit, minmax(320px,1fr));gap:20px}
+            @media (max-width:640px){ .grid-projects{grid-template-columns:1fr} }
+
+            .project-card{
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            display:flex;flex-direction:column;
+            transition: all 0.3s ease;
+            }
+            .project-card:hover{
+            border:1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 4px 16px rgba(255,122,24,0.1);
+            }
+            .project-card h3{margin:0 0 8px 0;font-size:17px;font-family:"Montserrat"}
+            .project-meta{font-size:12px;color:var(--muted);margin-bottom:12px;font-weight:600}
+            .project-card p{margin:0 0 12px 0;color:var(--muted);font-size:14px;line-height:1.6;flex-grow:1}
+            
+            .techs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+            .t{font-size:11px;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+            .project-links{display:flex;gap:8px;margin-top:auto}
+            .project-links a{font-size:13px;text-decoration:none;flex:1}
+
+            footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px;padding-top:16px;padding:40px 20px 0 20px;border-top:1px dashed rgba(255,255,255,0.02)}
+
             /* small helpers */
             .muted{color:var(--muted)}
             a.inline-link{color:var(--accent);text-decoration:none;font-weight:600}
+
+            @media (max-width:768px){
+                header{padding:0}
+                .hero{padding:24px}
+                main{gap:30px}
+            }
         </style>
     </head>
     <body>
         <div class="container" role="main">
             <header>
-            <div class="brand">
-                <div class="logo">M</div>
-                <div>
-                <h1>Gonzalo Bravo Maroto</h1>
-                <p>Desarrollador Multiplataforma</p>
+                <div class="brand">
+                    <div class="logo">GBM</div>
+                    <div>
+                        <h1>Gonzalo Bravo Maroto</h1>
+                        <p>Desarrolladord de Aplicaciones Multiplataforma</p>
+                    </div>
                 </div>
-            </div>
 
-            <nav>
-                <a class="btn" href="#projects">Proyectos</a>
-                <a class="btn" href="#contact">Contacto</a>
-                <a class="btn primary" href="https://github.com/MarotoJr14" target="_blank" rel="noopener">GitHub</a>
-            </nav>
+                <nav>
+                    <a class="btn primary" href="#hero">Sobre mí</a>
+                    <a class="btn primary" href="#projects">Proyectos</a>
+                    <a class="btn primary" href="#contact">Contacto</a>
+                </nav>
             </header>
 
             <main>
-                <!-- Left / Main column -->
-                <section>
-                    <article class="hero" aria-labelledby="intro-title">
-                    <h2 id="intro-title" class="title">Hola — soy Gonzalo “Maroto”</h2>
-                    <p class="lead">Desarrollador de aplicaciones multiplataforma con interés en Android, APIs y proyectos que resuelven problemas reales. Creo en construir software claro, mantenible y pensado para el usuario.</p>
-
-                    <div class="actions">
-                        <a class="btn primary" href="#projects">Ver proyectos</a>
-                        <a class="btn" href="#contact">Contactar</a>
-                    </div>
-
-                    <!-- Projects -->
-                    <div class="projects" id="projects">
-                        <h3 style="margin-top:18px;font-size:16px">Proyectos destacados</h3>
-
-                        <div class="grid-projects">
-                            <!-- Project 1 -->
-                            <div class="card">
-                                <h3>TrainerManager (App Android)</h3>
-                                <div class="meta">Kotlin · SQLite · Jetpack (ViewModel, LiveData)</div>
-                                <p class="muted" style="margin:0">App para entrenadores: gestionar sesiones, jugadores y estadísticas. UI responsive y almacenamiento local.</p>
-                                <div class="techs" style="margin-top:10px">
-                                <span class="t">Kotlin</span><span class="t">Jetpack</span><span class="t">SQLite</span>
-                                </div>
-                                <div class="preview">Capturas / enlace Play Store / Demo</div>
-                                <div style="margin-top:8px;display:flex;gap:8px">
-                                <a class="btn" href="https://github.com/maroto-dev/trainermanager" target="_blank" rel="noopener">Código</a>
-                                <a class="btn" href="#" target="_blank">Demo</a>
-                                </div>
-                            </div>
-
-                            <!-- Project 2 -->
-                            <div class="card">
-                                <h3>OrderAPI (API REST)</h3>
-                                <div class="meta">Java · Spring Boot · MySQL · Docker</div>
-                                <p class="muted" style="margin:0">API para la gestión de pedidos con endpoints CRUD, seguridad básica y documentación para Postman.</p>
-                                <div class="techs" style="margin-top:10px">
-                                <span class="t">Spring Boot</span><span class="t">MySQL</span><span class="t">Docker</span>
-                                </div>
-                                <div class="preview">Colección Postman · Docker Compose</div>
-                                <div style="margin-top:8px;display:flex;gap:8px">
-                                <a class="btn" href="https://github.com/maroto-dev/order-api" target="_blank" rel="noopener">Código</a>
-                                <a class="btn" href="#" target="_blank">Docs</a>
-                                </div>
-                            </div>
-
-                            <!-- Project 3 -->
-                            <div class="card">
-                                <h3>Metrics Dashboard</h3>
-                                <div class="meta">Python · Flask · Chart.js</div>
-                                <p class="muted" style="margin:0">Panel para visualizar métricas a partir de CSVs. Incluye filtros y gráficos interactivos.</p>
-                                <div class="techs" style="margin-top:10px">
-                                <span class="t">Python</span><span class="t">Flask</span><span class="t">Chart.js</span>
-                                </div>
-                                <div class="preview">Gráficos · Backend ligero</div>
-                                <div style="margin-top:8px;display:flex;gap:8px">
-                                <a class="btn" href="https://github.com/maroto-dev/metrics-dashboard" target="_blank" rel="noopener">Código</a>
-                                <a class="btn" href="#" target="_blank">Demo</a>
-                                </div>
-                            </div>
-
-                            <!-- Project 4 -->
-                            <div class="card">
-                                <h3>Proyecto personal — Gestor de Tareas</h3>
-                                <div class="meta">Kotlin Multiplatform · Firebase</div>
-                                <p class="muted" style="margin:0">Compartir lógica entre plataformas y sincronización con Firebase.</p>
-                                <div class="techs" style="margin-top:10px">
-                                <span class="t">Kotlin MP</span><span class="t">Firebase</span>
-                                </div>
-                                <div class="preview">Sincronización · Shared logic</div>
-                                <div style="margin-top:8px;display:flex;gap:8px">
-                                <a class="btn" href="#" target="_blank">Código</a>
-                                <a class="btn" href="#" target="_blank">Demo</a>
-                                </div>
-                            </div>
-
-                        </div> <!-- grid projects -->
-                    </div> <!-- projects -->
-                    </article>
+                <!-- Hero Section -->
+                <section class="hero" aria-labelledby="intro-title">
+                    <h2 id="intro-title" class="title">Hola, soy Gonzalo Bravo Maroto</h2>
+                    <p class="lead">Desarrollador de Aplicaciones Multiplataforma en formación, con conocimientos en diferentes lenguajes y frameworks. Mi experiencia como entrenador de fútbol base me aporta una visión práctica del trabajo en equipo, la comunicación efectiva y la disciplina, cualidades que aplico también al desarrollo de software funcional, intuitivo y centrado en el usuario.</p>
                 </section>
 
-                <!-- Right column -->
-                <aside class="right-col">
-                    <div class="about">
-                    <h4>Sobre mí</h4>
-                    <p>Soy Gonzalo, técnico superior en DAM y desarrollador con experiencia en apps Android y APIs. Me interesa la usabilidad y la arquitectura limpia.</p>
+                <div class="info-card">
+                    <h3>Tecnologías</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">Android Studio</div>
+                        <div class="tech-item">Angular</div>
+                        <div class="tech-item">C++</div>
+                        <div class="tech-item">Git / GitHub</div>
+                        <div class="tech-item">HTML / CSS</div>
+                        <div class="tech-item">Java</div>
+                        <div class="tech-item">Kotlin</div>
+                        <div class="tech-item">MySQL</div>
+                        <div class="tech-item">PostgreSQL</div>
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">Spring Boot</div>
+                        <div class="tech-item">Typescript</div>
                     </div>
+                </div>
 
-                    <div class="tech-list">
-                        <h4>Tecnologías</h4>
-                        <div class="tech-grid" aria-hidden="false">
-                            <div class="tech-item">Kotlin</div>
-                            <div class="tech-item">Android</div>
-                            <div class="tech-item">Java</div>
-                            <div class="tech-item">Python</div>
-                            <div class="tech-item">HTML / CSS</div>
-                            <div class="tech-item">Angular</div>
-                            <div class="tech-item">MySQL</div>
-                            <div class="tech-item">Git / GitHub</div>
+                <!-- Projects Section -->
+                <section id="projects" class="projects-section">
+                    <h2>Proyectos destacados</h2>
+
+                    <div class="grid-projects">
+                        <!-- Project 1 -->
+                        <div class="project-card">
+                            <h3>AppInventariadoSensores</h3>
+                            <div class="project-meta">PostgreSQL · Python · Kotlin</div>
+                            <p>App para la gestión de inventarios mediante escaneo de códigos de barras.</p>
+                            <div class="techs">
+                                <span class="t">PostgreSQL</span>
+                                <span class="t">Python</span>
+                                <span class="t">Kotlin</span>
+                            </div>
+                            <!-- <div class="project-links">
+                                <a class="btn" href="https://github.com/maroto-dev/trainermanager" target="_blank" rel="noopener">Código</a>
+                                <a class="btn" href="#" target="_blank">Demo</a>
+                            </div> -->
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-card">
+                            <h3>AppMentoring</h3>
+                            <div class="project-meta">MySQL · Node.js · Angular</div>
+                            <p>App para la gestión del proceso de mentoring entre tutores y alumnos de un centro educativo.</p>
+                            <div class="techs">
+                                <span class="t">MySQL</span>
+                                <span class="t">Node.js</span>
+                                <span class="t">Angular</span>
+                            </div>
+                            <!-- <div class="project-links">
+                                <a class="btn" href="https://github.com/maroto-dev/order-api" target="_blank" rel="noopener">Código</a>
+                                <a class="btn" href="#" target="_blank">Docs</a>
+                            </div> -->
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-card">
+                            <h3>AppGonzaloFutbol</h3>
+                            <div class="project-meta">PostgreSQL · Python · Flutter</div>
+                            <p>App para la visualización de estadísticas de partidos de futbol.</p>
+                            <div class="techs">
+                                <span class="t">PostgreSQL</span>
+                                <span class="t">Python</span>
+                                <span class="t">Flutter</span>
+                            </div>
+                            <!-- <div class="project-links">
+                                <a class="btn" href="https://github.com/maroto-dev/metrics-dashboard" target="_blank" rel="noopener">Código</a>
+                                <a class="btn" href="#" target="_blank">Demo</a>
+                            </div> -->
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="project-card">
+                            <h3>AppFutCup</h3>
+                            <div class="project-meta">PostgreSQL · Python · Flutter</div>
+                            <p>App para la gestión del torneo de fútbol "FutCup", así como la visualización de horarios resultados, clasificaciones y goleadores.</p>
+                            <div class="techs">
+                                <span class="t">PostgreSQL</span>
+                                <span class="t">Python</span>
+                                <span class="t">Flutter</span>
+                            </div>
+                            <!-- <div class="project-links">
+                                <a class="btn" href="#" target="_blank">Código</a>
+                                <a class="btn" href="#" target="_blank">Demo</a>
+                            </div> -->
                         </div>
                     </div>
-
-                    <div id="contact" class="contact">
-                        <h4>Contacto</h4>
-                        <div class="muted">Email profesional</div>
-                        <a href="mailto:g.bravo@pro2fp.es" class="inline-link">g.bravo@pro2fp.es</a>
-
-                        <div class="socials">
-                            <a href="https://github.com/maroto-dev" target="_blank" rel="noopener">GitHub</a>
-                            <a href="https://linkedin.com/in/maroto-dev" target="_blank" rel="noopener">LinkedIn</a>
+                </section>
+                <section id="contact" class="contact-section">
+                    <h2 id="contact">Contacto</h2>
+                    <div class="info-card">
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <span class="muted">📧</span>
+                                <a href="mailto:gbravomaroto@gmail.com">gbravomaroto@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="muted">📍</span>
+                                <span class="muted">Galapagar, Madrid</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="muted">📞</span>
+                                <span class="muted">661583989</span>
+                            </div>
+                            <div class="socials">
+                                <a href="https://github.com/marotojr14" target="_blank" rel="noopener">GitHub</a>
+                                <a href="https://linkedin.com/in/gonzalo-bravo-maroto" target="_blank" rel="noopener">LinkedIn</a>
+                            </div>
                         </div>
                     </div>
-                </aside>
+                </section>
             </main>
 
             <footer>
-            © <strong>Gonzalo Bravo Maroto</strong> — Desarrollador Multiplataforma · <span class="muted">Madrid</span>
+                © <strong>Gonzalo Bravo Maroto</strong> · 2026 · <span class="muted">Madrid</span>
             </footer>
         </div>
     </body>
